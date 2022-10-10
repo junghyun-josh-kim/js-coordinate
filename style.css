@@ -1,0 +1,28 @@
+body {
+  background-color: black;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin: 2px;
+}
+
+.box {
+  background-color: beige;
+}
+
+#target {
+  background-color: tomato;
+}
+
+button {
+  margin: 2px;
+}
+
+section {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}

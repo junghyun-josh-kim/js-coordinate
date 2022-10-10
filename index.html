@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Coordinate</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <section>
+      <button id="scroll-by">Scroll by 100px(y)</button>
+      <button id="scroll-to">Scroll to 100px(y)</button>
+      <button id="scroll-target">Scroll into target</button>
+    </section>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div id="target"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      const target = document.getElementById('target');
+      const scrollFirst = document.getElementById('scroll-by');
+      const scrollSecond = document.getElementById('scroll-to');
+      const scrollThird = document.getElementById('scroll-target');
+      target.addEventListener('click', (event) => {
+        console.log(target.getBoundingClientRect());
+        console.log(`client : ${event.clientX} ${event.clientY}`);
+        console.log(`page : ${event.pageX} ${event.pageY}`);
+      });
+      scrollFirst.addEventListener('click', () => {
+        scrollBy({ top: 100, left: 0, behavior: 'smooth' });
+      });
+      scrollSecond.addEventListener('click', () => {
+        scrollTo({ top: 100, left: 0, behavior: 'smooth' });
+      });
+      scrollThird.addEventListener('click', () => {
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    </script>
+  </body>
+</html>
